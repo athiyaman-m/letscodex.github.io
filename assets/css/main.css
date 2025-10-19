@@ -1009,6 +1009,14 @@ section,
   /* Swiper default fix if used somewhere inside */
 }
 
+/* Dynamic hero word styling */
+#dynamic-word {
+  color: #e53935; /* red */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
 .hero::before {
   content: "";
   position: absolute;

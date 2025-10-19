@@ -102,12 +102,17 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section dark-background pt-4 pb-5">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
+        <h3 class="display-5 fw-bold mb-3" style="text-align: center;">Lets code your <span id="dynamic-word" aria-live="polite">idea</span>!</h3>
+
         <div class="row align-items-center gy-5">
+
           <div class="col-lg-7">
+
+            
             <div class="hero-card shadow-sm" data-aos="fade-right" data-aos-delay="150">
               <div class="eyebrow d-inline-flex align-items-center mb-3">
                 <i class="bi bi-stars me-2"></i>
@@ -116,7 +121,7 @@
               <div class="content">
                 <h2 class="display-5 fw-bold mb-3">Build modern interfaces that feel effortless</h2>
                 <p class="lead mb-4">Empowering ideas with sleek design, intelligent code, and cutting-edge tech.
-From AI-driven solutions to dynamic web and mobile apps, we craft products that make innovation simple.</p>
+                                    From AI-driven solutions to dynamic web and mobile apps, we craft products that make innovation simple.</p>
                 <div class="d-flex flex-wrap gap-3">
                   <a href="#about" class="btn btn-primary-ghost">
                     <span>Explore Now</span>
@@ -1954,6 +1959,59 @@ From AI-driven solutions to dynamic web and mobile apps, we craft products that 
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Dynamic hero word (type/backspace only the word) -->
+  <script>
+    (function () {
+      const words = ['idea', 'design', 'product', 'app', 'prototype'];
+      const el = document.getElementById('dynamic-word');
+      if (!el) return;
+
+      const pauseAfterFull = 1400;
+      const typeSpeed = 90;
+      const backSpeed = 50;
+
+      let wordIndex = 0;
+      let charIndex = words[0].length;
+      let typing = false; // start by erasing after initial pause
+
+      // initialize visible word (keeps initial "Lets code your idea!" intact)
+      el.textContent = words[0];
+
+      function tick() {
+        const word = words[wordIndex];
+        if (typing) {
+          charIndex++;
+          el.textContent = word.slice(0, charIndex);
+          if (charIndex === word.length) {
+            typing = false;
+            setTimeout(tick, pauseAfterFull);
+            return;
+          }
+          setTimeout(tick, typeSpeed);
+        } else {
+          // backspacing
+          charIndex--;
+          el.textContent = word.slice(0, charIndex);
+          if (charIndex === 0) {
+            // move to next word and start typing
+            wordIndex = (wordIndex + 1) % words.length;
+            typing = true;
+            setTimeout(tick, typeSpeed);
+            return;
+          }
+          setTimeout(tick, backSpeed);
+        }
+      }
+
+      // start cycle after initial pause to show the original word briefly
+      setTimeout(() => {
+        // begin backspacing the first word
+        typing = false;
+        setTimeout(tick, backSpeed);
+      }, pauseAfterFull);
+    })();
+  </script>
 
 </body>
 
