@@ -12,6 +12,25 @@
 # Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
+
+/* CSS for floating WhatsApp button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 70px; /* Adjust as needed */
+  right: 14px; /* Adjust as needed */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.whatsapp-float img {
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
