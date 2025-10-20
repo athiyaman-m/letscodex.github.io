@@ -1011,7 +1011,7 @@ section,
 
 /* Dynamic hero word styling */
 #dynamic-word {
-  color: #e53935; /* red */
+  color: #dd3209; /* red */
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 700;
