@@ -461,3 +461,60 @@
         </div>
       </div> -->
     </section><!-- /Testimonials Section -->
+
+
+
+
+              <div class="col-md-6 col-lg-3">
+            <article class="member-card h-100" data-aos="zoom-in" data-aos-delay="200">
+              <figure class="member-media">
+                <img src="assets/img/person/person-m-7.webp" class="img-fluid" alt="Team member portrait">
+                <ul class="social-list">
+                  <li><a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="Dribbble"><i class="bi bi-dribbble"></i></a></li>
+                </ul>
+              </figure>
+              <div class="member-content">
+                <h3 class="member-name">Logan Rivera</h3>
+                <p class="member-role">Lead UX Designer</p>
+                <p class="member-bio">Voluptatem repellat omnis, harum veritatis amet. Ullam fugiat beatae quam, nihil officiis.</p>
+              </div>
+            </article><!-- End Team Member -->
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <article class="member-card h-100" data-aos="zoom-in" data-aos-delay="250">
+              <figure class="member-media">
+                <img src="assets/img/person/person-f-12.webp" class="img-fluid" alt="Team member portrait">
+                <ul class="social-list">
+                  <li><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="Behance"><i class="bi bi-behance"></i></a></li>
+                </ul>
+              </figure>
+              <div class="member-content">
+                <h3 class="member-name">Mia Patel</h3>
+                <p class="member-role">Engineering Manager</p>
+                <p class="member-bio">Accusantium quasi obcaecati, ipsum libero minima rem. Dignissimos, asperiores. Nisi, distinctio.</p>
+              </div>
+            </article><!-- End Team Member -->
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <article class="member-card h-100" data-aos="zoom-in" data-aos-delay="300">
+              <figure class="member-media">
+                <img src="assets/img/person/person-m-11.webp" class="img-fluid" alt="Team member portrait">
+                <ul class="social-list">
+                  <li><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="Github"><i class="bi bi-github"></i></a></li>
+                </ul>
+              </figure>
+              <div class="member-content">
+                <h3 class="member-name">Ethan Brooks</h3>
+                <p class="member-role">Full‑Stack Developer</p>
+                <p class="member-bio">Quidem blanditiis recusandae laborum, at molestias id aliquam. Cumque, architecto dolorum.</p>
+              </div>
+            </article><!-- End Team Member -->
+          </div>
