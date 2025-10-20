@@ -19,6 +19,20 @@
   bottom: 70px; /* Adjust as needed */
   right: 14px; /* Adjust as needed */
   z-index: 10; /* Ensure it's above other content */
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .28s ease, transform .28s ease, visibility 0s linear .28s;
+  pointer-events: none;
+}
+
+.whatsapp-float.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0s;
+  pointer-events: auto;
 }
 
 .whatsapp-float img {
