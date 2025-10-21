@@ -1272,37 +1272,36 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="https://api.web3forms.com/submit" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <input type="hidden" name="access_key" value="70f95146-2ca6-4f19-8ad4-821f4d6c005c">
-              <div class="row gy-4">
+  <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+    <input type="hidden" name="access_key" value="70f95146-2ca6-4f19-8ad4-821f4d6c005c">
 
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+      </div>
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+      </div>
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
+      <div class="col-md-12">
+        <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+      </div>
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
+      <div class="col-md-12">
+        <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+      </div>
 
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
+      <div class="col-md-12 text-center">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your message has been sent. Thank you!</div>
+        <button type="submit">Send Message</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- End Contact Form -->
 
         </div>
 
@@ -1503,6 +1502,46 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   })(); 
 </script>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function (e) {
+  e.preventDefault(); // stop form from reloading
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const loading = form.querySelector('.loading');
+  const error = form.querySelector('.error-message');
+  const success = form.querySelector('.sent-message');
+
+  loading.style.display = 'block';
+  error.style.display = 'none';
+  success.style.display = 'none';
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+    const result = await response.json();
+
+    loading.style.display = 'none';
+
+    if (result.success) {
+      success.style.display = 'block';
+      form.reset();
+    } else {
+      error.textContent = result.message || "Something went wrong!";
+      error.style.display = 'block';
+    }
+  } catch (err) {
+    loading.style.display = 'none';
+    error.textContent = "Error submitting form. Please try again.";
+    error.style.display = 'block';
+  }
+});
+</script>
+
+
 
 </body>
 
